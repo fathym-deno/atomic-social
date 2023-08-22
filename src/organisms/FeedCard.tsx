@@ -10,6 +10,7 @@ export interface FeedCardProps extends JSX.HTMLAttributes<HTMLDivElement> {
   video?: string;
   actions?: ActionProps[] | ComponentChildren;
 }
+
 export function FeedCard(props: FeedCardProps): JSX.Element {
   const actions = Array.isArray(props.actions) ? props.actions : undefined;
   return (
