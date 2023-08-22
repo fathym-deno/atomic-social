@@ -6,6 +6,16 @@ export interface PostFormProps extends JSX.HTMLAttributes<HTMLFormElement> {
 }
 
 export function PostForm(props: PostFormProps): JSX.Element {
+  const handleInput = (event: Event) => {
+    const input = event.target as HTMLInputElement;
+    const value = input.value;
+    const maxLength = 400;
+
+    if (value.length > maxLength) {
+      input.value = value.slice(0, maxLength);
+    }
+  };
+
   return (
     <form
       {...props}
@@ -20,6 +30,8 @@ export function PostForm(props: PostFormProps): JSX.Element {
         <textarea
           class="w-full h-20 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Write your post..."
+          onInput={handleInput}
+          maxLength={400}
         >
         </textarea>
         <div class="flex justify-end ml-2">
@@ -30,6 +42,9 @@ export function PostForm(props: PostFormProps): JSX.Element {
             Post
           </Action>
         </div>
+      </div>
+      <div class="text-gray-500 text-right mt-2">
+        <span>{400 - (props.value?.length || 0)}</span> characters remaining
       </div>
     </form>
   );
