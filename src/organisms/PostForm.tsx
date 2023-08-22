@@ -1,11 +1,14 @@
-import { ComponentChildren, JSX } from "preact";
+import { ComponentChildren, JSX, useState } from "preact";
 import { Action, classSet } from "../src.deps.ts";
 
 export interface PostFormProps extends JSX.HTMLAttributes<HTMLFormElement> {
   avatar: string;
+  value?: string;
 }
 
 export function PostForm(props: PostFormProps): JSX.Element {
+  const [inputValue, setInputValue] = useState(props.value || "");
+
   const handleInput = (event: Event) => {
     const input = event.target as HTMLInputElement;
     const value = input.value;
@@ -14,6 +17,8 @@ export function PostForm(props: PostFormProps): JSX.Element {
     if (value.length > maxLength) {
       input.value = value.slice(0, maxLength);
     }
+
+    setInputValue(value);
   };
 
   return (
@@ -32,8 +37,8 @@ export function PostForm(props: PostFormProps): JSX.Element {
           placeholder="Write your post..."
           onInput={handleInput}
           maxLength={400}
-        >
-        </textarea>
+          value={inputValue}
+        ></textarea>
         <div class="flex justify-end ml-2">
           <Action
             type="submit"
@@ -44,7 +49,7 @@ export function PostForm(props: PostFormProps): JSX.Element {
         </div>
       </div>
       <div class="text-gray-500 text-right mt-2">
-        <span>{400 - (props.value?.length || 0)}</span> characters remaining
+        <span>{400 - inputValue.length}</span> characters remaining
       </div>
     </form>
   );
