@@ -15,7 +15,7 @@ export function FeedCardList(props: FeedCardListProps): JSX.Element {
       {cards.map((card, index) => <FeedCard key={index} {...card} />)}
 
       {loadMore && (
-        <div class="flex justify-center mt-4">
+        <div class="flex justify-center">
           <Action {...loadMore} />
         </div>
       )}
