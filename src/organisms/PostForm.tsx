@@ -4,6 +4,7 @@ import { Action, classSet } from "../src.deps.ts";
 
 export interface PostFormProps extends JSX.HTMLAttributes<HTMLFormElement> {
   avatar: string;
+  maxLength?: number;
   value?: string;
 }
 
@@ -13,7 +14,7 @@ export function PostForm(props: PostFormProps): JSX.Element {
   const handleInput = (event: Event) => {
     const input = event.target as HTMLInputElement;
     const value = input.value;
-    const maxLength = 400;
+    const maxLength = props.maxLength || 400;
 
     if (value.length > maxLength) {
       input.value = value.slice(0, maxLength);
