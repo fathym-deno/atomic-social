@@ -1,13 +1,21 @@
 import { ComponentChildren, JSX } from "preact";
-import { Action, ActionGroup, ActionProps, MenuButton, MenuButtonProps } from "../src.deps.ts";
-import { classSet } from "../utils/jsx.utils.tsx";
+import {
+  Action,
+  ActionGroup,
+  ActionProps,
+  classSet,
+  MenuButton,
+  MenuButtonProps,
+  MenuButtonStyleTypes,
+} from "../src.deps.ts";
 
-export interface ProfileDisplayProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface ProfileDisplayProps
+  extends JSX.HTMLAttributes<HTMLDivElement> {
   username: string;
   avatar: string;
   abstract: string;
   information: { Icon: ComponentChildren; Details: string }[];
-  primaryAction: JSX.Element;
+  primaryAction: ActionProps;
   actions?: ActionProps[] | ComponentChildren;
 }
 
@@ -30,7 +38,7 @@ export function ProfileDisplay(props: ProfileDisplayProps): JSX.Element {
 
       <div class="mt-4">
         {props.information.map((info, index) => (
-          <div class="flex items-center mb-2" key={index}>
+          <div class="flex items-center mb-2 flex-wrap" key={index}>
             {info.Icon}
             <span class="ml-2">{info.Details}</span>
           </div>
@@ -43,22 +51,26 @@ export function ProfileDisplay(props: ProfileDisplayProps): JSX.Element {
             {!actions && props.actions}
             {actions &&
               actions.map((action, index) => (
-                <Action key={index} {...action} />
+                <Action
+                  key={index}
+                  {...action}
+                />
               ))}
           </>
         </ActionGroup>
       </div>
 
-      <div class="mt-4">
+      <div class="mt-4 flex flex-col md:flex-row">
         <MenuButton
-          toggleChildren={<Action {...props.primaryAction} />}
+          toggleChildren="…"
           menuStyle={MenuButtonStyleTypes.Popover}
         >
+          {!actions && props.actions}
           {actions &&
-            actions.map((action, index) => (
-              <Action key={index} {...action} />
-            ))}
+            actions.map((action, index) => <Action key={index} {...action} />)}
         </MenuButton>
+
+        <Action class="ml-2" {...props.primaryAction} />
       </div>
     </div>
   );
