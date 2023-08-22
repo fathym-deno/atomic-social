@@ -1,8 +1,10 @@
-import { classSet, ComponentChildren, JSX } from "../../src.deps.ts";
-import { Action, ActionProps } from "../../atoms/_exports.tsx";
+import { ComponentChildren, JSX } from "preact";
+import { Action, classSet } from "../src.deps.ts";
+
 export interface PostFormProps extends JSX.HTMLAttributes<HTMLFormElement> {
   avatar: string;
 }
+
 export function PostForm(props: PostFormProps): JSX.Element {
   return (
     <form

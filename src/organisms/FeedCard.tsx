@@ -1,11 +1,6 @@
-import { classSet, Fragment, JSX } from "../../src.deps.ts";
-import {
-  Action,
-  ActionProps,
-  ActionStyleTypes,
-} from "../../atoms/_exports.tsx";
-import { ActionGroup } from "../../molecules/_exports.tsx";
-import { ComponentChildren } from "https://deno.land/x/fathym_atomic@v0.0.41-integration/src/src.deps.ts";
+import { ComponentChildren, JSX } from "preact";
+import { Action, ActionGroup, ActionProps, classSet } from "../src.deps.ts";
+
 export interface FeedCardProps extends JSX.HTMLAttributes<HTMLDivElement> {
   username: string;
   avatar: string;
