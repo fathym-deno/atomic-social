@@ -1,4 +1,5 @@
-import { ComponentChildren, JSX, useState } from "preact";
+import { ComponentChildren, JSX } from "preact";
+import { useState } from "preact/hooks";
 import { Action, classSet } from "../src.deps.ts";
 
 export interface PostFormProps extends JSX.HTMLAttributes<HTMLFormElement> {
@@ -38,7 +39,8 @@ export function PostForm(props: PostFormProps): JSX.Element {
           onInput={handleInput}
           maxLength={400}
           value={inputValue}
-        ></textarea>
+        >
+        </textarea>
         <div class="flex justify-end ml-2">
           <Action
             type="submit"
