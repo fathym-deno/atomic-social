@@ -1,9 +1,8 @@
 import { ComponentChildren, JSX } from "preact";
-import { FeedCard, FeedCardProps } from "./FeedCard";
-import { PostForm, PostFormProps } from "./PostForm";
+import { FeedCard, FeedCardProps } from "./FeedCard.tsx";
+import { PostForm, PostFormProps } from "./PostForm.tsx";
 
-export interface PostWithFeedProps
-  extends JSX.HTMLAttributes<HTMLDivElement> {
+export interface PostWithFeedProps extends JSX.HTMLAttributes<HTMLDivElement> {
   feedCardProps: FeedCardProps;
   postFormProps: PostFormProps;
 }
