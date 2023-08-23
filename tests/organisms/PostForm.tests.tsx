@@ -5,14 +5,14 @@ import {
   describe,
   it,
   render,
-} from "../../test.deps.ts";
-import { PostForm, PostFormProps } from "../organisms/PostForm.tsx";
+} from "../test.deps.ts";
+import { PostForm, PostFormProps } from "../../src/organisms/PostForm.tsx";
 
 describe("PostForm Tests", () => {
   describe("Render PostForm", () => {
     const postFormProps: PostFormProps = {
       onSubmit: () => {},
-      avatar: "https://example.com/avatar.png"
+      avatar: "https://example.com/avatar.png",
     };
 
     const html = render(<PostForm {...postFormProps} />);

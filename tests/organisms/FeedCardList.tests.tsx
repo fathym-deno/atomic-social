@@ -6,7 +6,10 @@ import {
   it,
   render,
 } from "../test.deps.ts";
-import { FeedCardList, FeedCardListProps } from "../../src/organisms/FeedCardList.tsx";
+import {
+  FeedCardList,
+  FeedCardListProps,
+} from "../../src/organisms/FeedCardList.tsx";
 
 describe("FeedCardList Tests", () => {
   describe("Render FeedCardList", () => {

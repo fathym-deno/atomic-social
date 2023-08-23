@@ -6,7 +6,10 @@ import {
   it,
   render,
 } from "../test.deps.ts";
-import { PostWithFeed, PostWithFeedProps } from "../../src/organisms/PostWithFeed.tsx";
+import {
+  PostWithFeed,
+  PostWithFeedProps,
+} from "../../src/organisms/PostWithFeed.tsx";
 
 describe("PostWithFeed Tests", () => {
   describe("Render PostWithFeed", () => {
