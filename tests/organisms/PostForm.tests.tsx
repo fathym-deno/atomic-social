@@ -12,6 +12,7 @@ describe("PostForm Tests", () => {
   describe("Render PostForm", () => {
     const postFormProps: PostFormProps = {
       onSubmit: () => {},
+      avatar: "https://example.com/avatar.png"
     };
 
     const html = render(<PostForm {...postFormProps} />);
