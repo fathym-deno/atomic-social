@@ -6,7 +6,7 @@ import {
   it,
   render,
 } from "../test.deps.ts";
-import { ProfileDisplay, ProfileDisplayProps } from "../../src/organisms/ProfileDisplay";
+import { ProfileDisplay, ProfileDisplayProps } from "../../src/organisms/ProfileDisplay.tsx";
 
 describe("ProfileDisplay Tests", () => {
   describe("Render ProfileDisplay", () => {
