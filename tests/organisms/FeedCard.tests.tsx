@@ -1,23 +1,29 @@
-import { afterEach, assert, assertEquals, beforeEach, describe, it, render } from "../test.deps.ts";
-import { FeedCard } from "../../src/organisms/FeedCard.tsx";
+import {
+  afterEach,
+  assert,
+  assertEquals,
+  beforeEach,
+  describe,
+  it,
+  render,
+} from "../test.deps.ts";
+import { FeedCard, FeedCardProps } from "../../src/organisms/FeedCard.tsx";
 
 describe("FeedCard Tests", () => {
   describe("Render FeedCard", () => {
-    const feedCardProps = {
-      title: "Test Title",
-      content: "Test Content",
-      author: "Test Author",
-      date: "2022-01-01",
+    const feedCardProps: FeedCardProps = {
+      username: "Test Author",
+      timestamp: "2022-01-01",
+      avatar: "https://github.com/mcgear.png",
+      children: <h1>Hey</h1>,
     };
 
     const html = render(<FeedCard {...feedCardProps} />);
 
-    it("should render the title", () => {
-      assert(html.includes("Test Title"));
-    });
+    console.log(html);
 
-    it("should render the content", () => {
-      assert(html.includes("Test Content"));
+    it("should render the avatar", () => {
+      assert(html.includes("https://github.com/mcgear.png"));
     });
 
     it("should render the author", () => {
@@ -26,6 +32,10 @@ describe("FeedCard Tests", () => {
 
     it("should render the date", () => {
       assert(html.includes("2022-01-01"));
+    });
+
+    it("should render the children", () => {
+      assert(html.includes("<h1>Hey</h1>"));
     });
   });
 });
