@@ -1,13 +1,13 @@
 import { ComponentChildren, JSX } from "preact";
 import { Action, ActionGroup, ActionProps, classSet } from "../src.deps.ts";
 
-export interface FeedCardProps extends JSX.HTMLAttributes<HTMLDivElement> {
+export type FeedCardProps = JSX.HTMLAttributes<HTMLDivElement> & {
   title: ComponentChildren;
   avatar: string | ComponentChildren;
   subtitle: ComponentChildren;
   children: ComponentChildren;
   actions?: ActionProps[] | ComponentChildren;
-}
+};
 
 export function FeedCard(props: FeedCardProps): JSX.Element {
   const actions = Array.isArray(props.actions) ? props.actions : undefined;
