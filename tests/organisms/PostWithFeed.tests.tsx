@@ -10,25 +10,33 @@ import {
   PostWithFeed,
   PostWithFeedProps,
 } from "../../src/organisms/PostWithFeed.tsx";
+import { FeedCard } from "../../src/organisms/FeedCard.tsx";
 
 describe("PostWithFeed Tests", () => {
   describe("Render PostWithFeed", () => {
     const postWithFeedProps: PostWithFeedProps = {
       feedCardListProps: {
-        cards: [
-          {
-            title: <h2>Test Author 1</h2>,
-            subtitle: <p>2022-01-01</p>,
-            avatar: "https://github.com/mcgear.png",
-            children: <h1>Hey 1</h1>,
-          },
-          {
-            title: <h2>Test Author 2</h2>,
-            subtitle: <p>2022-01-02</p>,
-            avatar: "https://github.com/mcgear.png",
-            children: <h1>Hey 2</h1>,
-          },
-        ],
+        cards: (
+          <>
+            <FeedCard
+              {...{
+                title: <h2>Test Author 1</h2>,
+                subtitle: <p>2022-01-01</p>,
+                avatar: "https://github.com/mcgear.png",
+                children: <h1>Hey 1</h1>,
+              }}
+            />
+
+            <FeedCard
+              {...{
+                title: <h2>Test Author 2</h2>,
+                subtitle: <p>2022-01-02</p>,
+                avatar: "https://github.com/mcgear.png",
+                children: <h1>Hey 2</h1>,
+              }}
+            />
+          </>
+        ),
       },
       postFormProps: {
         onSubmit: () => {},

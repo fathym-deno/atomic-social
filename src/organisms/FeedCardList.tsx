@@ -3,7 +3,7 @@ import { Action, ActionGroup, ActionProps, classSet } from "../src.deps.ts";
 import { FeedCard, FeedCardProps } from "./FeedCard.tsx";
 
 export interface FeedCardListProps extends JSX.HTMLAttributes<HTMLDivElement> {
-  cards: FeedCardProps[];
+  cards: ComponentChildren;
   loadMore?: ActionProps;
 }
 
@@ -12,7 +12,7 @@ export function FeedCardList(props: FeedCardListProps): JSX.Element {
 
   return (
     <div {...rest}>
-      {cards.map((card, index) => <FeedCard key={index} {...card} />)}
+      {cards}
 
       {loadMore && (
         <div class="flex justify-center">
