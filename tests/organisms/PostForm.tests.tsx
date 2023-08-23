@@ -5,8 +5,8 @@ import {
   describe,
   it,
   render,
-} from "../test.deps.ts";
-import { PostForm, PostFormProps } from "../../src/organisms/PostForm.tsx";
+} from "../../test.deps.ts";
+import { PostForm, PostFormProps } from "../organisms/PostForm.tsx";
 
 describe("PostForm Tests", () => {
   describe("Render PostForm", () => {
@@ -20,11 +20,11 @@ describe("PostForm Tests", () => {
     console.log(html);
 
     it("should render the form", () => {
-      assert(html.includes("<form>"));
+      assert(html.includes("<form"));
     });
 
     it("should render the input field", () => {
-      assert(html.includes("<input"));
+      assert(html.includes("<textarea"));
     });
 
     it("should render the submit button", () => {
