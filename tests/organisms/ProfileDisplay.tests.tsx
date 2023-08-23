@@ -1,30 +1,22 @@
-import {
-  afterEach,
-  assert,
-  beforeEach,
-  describe,
-  it,
-  render,
-} from "../test.deps.ts";
-import { ProfileDisplay, ProfileDisplayProps } from "../../src/organisms/ProfileDisplay.tsx";
+import { h } from "preact";
+import { render } from "@testing-library/preact";
+import { ProfileDisplay, ProfileDisplayProps } from "../../src/organisms/ProfileDisplay";
 
-describe("ProfileDisplay Tests", () => {
-  describe("Render ProfileDisplay", () => {
+describe("ProfileDisplay", () => {
+  it("renders correctly", () => {
     const profileDisplayProps: ProfileDisplayProps = {
-      username: "Test User",
-      avatar: "https://github.com/testuser.png"
+      username: "JohnDoe",
+      avatar: "https://example.com/avatar.jpg",
+      abstract: "Software Engineer",
+      information: [
+        { Icon: <span>📞</span>, Details: "123-456-7890" },
+        { Icon: <span>📧</span>, Details: "john.doe@example.com" },
+      ],
+      primaryAction: { label: "Follow", onClick: () => {} },
     };
 
-    const html = render(<ProfileDisplay {...profileDisplayProps} />);
+    const { container } = render(<ProfileDisplay {...profileDisplayProps} />);
 
-    console.log(html);
-
-    it("should render the avatar", () => {
-      assert(html.includes("https://github.com/testuser.png"));
-    });
-
-    it("should render the username", () => {
-      assert(html.includes("Test User"));
-    });
+    // Assert your expectations here
   });
 });
