@@ -1,7 +1,8 @@
 import { ComponentChildren, JSX } from "preact";
 import { Action, ActionGroup, ActionProps, classSet } from "../src.deps.ts";
 
-export interface FeedCardProps extends Omit<JSX.HTMLAttributes<HTMLDivElement>, 'title'> {
+export interface FeedCardProps
+  extends Omit<JSX.HTMLAttributes<HTMLDivElement>, "title"> {
   title: ComponentChildren;
   avatar: string | ComponentChildren;
   subtitle: ComponentChildren;
