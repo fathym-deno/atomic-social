@@ -16,14 +16,14 @@ describe("FeedCardList Tests", () => {
     const feedCardListProps: FeedCardListProps = {
       cards: [
         {
-          username: "Test Author 1",
-          timestamp: "2022-01-01",
+          title: <h2>Test Author 1</h2>,
+          subtitle: <p>2022-01-01</p>,
           avatar: "https://github.com/mcgear.png",
           children: <h1>Hey 1</h1>,
         },
         {
-          username: "Test Author 2",
-          timestamp: "2022-01-02",
+          title: <h2>Test Author 2</h2>,
+          subtitle: <p>2022-01-02</p>,
           avatar: "https://github.com/mcgear.png",
           children: <h1>Hey 2</h1>,
         },
@@ -38,12 +38,12 @@ describe("FeedCardList Tests", () => {
       assert(html.includes("https://github.com/mcgear.png"));
     });
 
-    it("should render the first card's author", () => {
-      assert(html.includes("Test Author 1"));
+    it("should render the first card's title", () => {
+      assert(html.includes("<h2>Test Author 1</h2>"));
     });
 
-    it("should render the first card's date", () => {
-      assert(html.includes("2022-01-01"));
+    it("should render the first card's subtitle", () => {
+      assert(html.includes("<p>2022-01-01</p>"));
     });
 
     it("should render the first card's children", () => {
@@ -54,12 +54,12 @@ describe("FeedCardList Tests", () => {
       assert(html.includes("https://github.com/mcgear.png"));
     });
 
-    it("should render the second card's author", () => {
-      assert(html.includes("Test Author 2"));
+    it("should render the second card's title", () => {
+      assert(html.includes("<h2>Test Author 2</h2>"));
     });
 
-    it("should render the second card's date", () => {
-      assert(html.includes("2022-01-02"));
+    it("should render the second card's subtitle", () => {
+      assert(html.includes("<p>2022-01-02</p>"));
     });
 
     it("should render the second card's children", () => {

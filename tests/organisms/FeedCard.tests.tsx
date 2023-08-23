@@ -12,8 +12,8 @@ import { FeedCard, FeedCardProps } from "../../src/organisms/FeedCard.tsx";
 describe("FeedCard Tests", () => {
   describe("Render FeedCard", () => {
     const feedCardProps: FeedCardProps = {
-      username: "Test Author",
-      timestamp: "2022-01-01",
+      title: <h2>Test Author</h2>,
+      subtitle: <p>2022-01-01</p>,
       avatar: "https://github.com/mcgear.png",
       children: <h1>Hey</h1>,
     };
@@ -26,12 +26,12 @@ describe("FeedCard Tests", () => {
       assert(html.includes("https://github.com/mcgear.png"));
     });
 
-    it("should render the author", () => {
-      assert(html.includes("Test Author"));
+    it("should render the title", () => {
+      assert(html.includes("<h2>Test Author</h2>"));
     });
 
-    it("should render the date", () => {
-      assert(html.includes("2022-01-01"));
+    it("should render the subtitle", () => {
+      assert(html.includes("<p>2022-01-01</p>"));
     });
 
     it("should render the children", () => {
