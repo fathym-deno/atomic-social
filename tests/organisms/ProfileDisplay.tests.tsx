@@ -12,8 +12,7 @@ describe("ProfileDisplay Tests", () => {
   describe("Render ProfileDisplay", () => {
     const profileDisplayProps: ProfileDisplayProps = {
       username: "Test User",
-      avatar: "https://github.com/testuser.png",
-      bio: "This is a test bio",
+      avatar: "https://github.com/testuser.png"
     };
 
     const html = render(<ProfileDisplay {...profileDisplayProps} />);
@@ -26,10 +25,6 @@ describe("ProfileDisplay Tests", () => {
 
     it("should render the username", () => {
       assert(html.includes("Test User"));
-    });
-
-    it("should render the bio", () => {
-      assert(html.includes("This is a test bio"));
     });
   });
 });
