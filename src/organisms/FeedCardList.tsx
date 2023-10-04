@@ -1,6 +1,4 @@
-import { ComponentChildren, JSX } from "preact";
-import { Action, ActionGroup, ActionProps, classSet } from "../src.deps.ts";
-import { FeedCard, FeedCardProps } from "./FeedCard.tsx";
+import { Action, ActionProps, ComponentChildren, JSX } from "../src.deps.ts";
 
 export interface FeedCardListProps extends JSX.HTMLAttributes<HTMLDivElement> {
   cards: ComponentChildren;

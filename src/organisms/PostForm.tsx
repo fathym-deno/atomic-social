@@ -1,6 +1,4 @@
-import { ComponentChildren, JSX } from "preact";
-import { useState } from "preact/hooks";
-import { Action, classSet } from "../src.deps.ts";
+import { Action, classSet, JSX, useState } from "../src.deps.ts";
 
 export interface PostFormProps extends JSX.HTMLAttributes<HTMLFormElement> {
   avatar: string;

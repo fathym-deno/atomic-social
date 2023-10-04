@@ -1,9 +1,10 @@
-import { ComponentChildren, JSX } from "preact";
 import {
   Action,
   ActionGroup,
   ActionProps,
   classSet,
+  ComponentChildren,
+  JSX,
   MenuButton,
   MenuButtonProps,
   MenuButtonStyleTypes,
@@ -61,10 +62,7 @@ export function ProfileDisplay(props: ProfileDisplayProps): JSX.Element {
       </div>
 
       <div class="mt-4 flex flex-col md:flex-row">
-        <MenuButton
-          toggleChildren="…"
-          menuStyle={MenuButtonStyleTypes.Popover}
-        >
+        <MenuButton toggleChildren="…" menuStyle={MenuButtonStyleTypes.Popover}>
           {!actions && props.actions}
           {actions &&
             actions.map((action, index) => <Action key={index} {...action} />)}
