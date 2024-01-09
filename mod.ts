@@ -1,1 +1,1 @@
-export * from "./src/organisms/_exports.tsx";
+export * from "./src/organisms/_exports.ts";
