@@ -24,7 +24,7 @@ export function PostForm(props: PostFormProps): JSX.Element {
   return (
     <form
       {...props}
-      class={classSet(props, "bg-white rounded-lg shadow-md p-4")}
+      class={classSet(["bg-white rounded-lg shadow-md p-4"], props, "-:")}
     >
       <div class="flex items-center">
         <img

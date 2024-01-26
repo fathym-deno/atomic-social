@@ -24,7 +24,7 @@ export function ProfileDisplay(props: ProfileDisplayProps): JSX.Element {
   const actions = Array.isArray(props.actions) ? props.actions : undefined;
 
   return (
-    <div class={classSet(props, "bg-white rounded-lg shadow-md p-4")}>
+    <div class={classSet(["bg-white rounded-lg shadow-md p-4"], props, "-:")}>
       <div class="flex items-center">
         <img
           src={props.avatar}

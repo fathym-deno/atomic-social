@@ -11,7 +11,7 @@ export function PostWithFeed(props: PostWithFeedProps): JSX.Element {
   const { feedCardListProps, postFormProps, ...divProps } = props;
 
   return (
-    <div {...divProps} class={classSet(props, "flex", "flex-col")}>
+    <div {...divProps} class={classSet(["flex flex-col"], props, "-:")}>
       <PostForm {...postFormProps} />
       <FeedCardList {...feedCardListProps} />
     </div>
