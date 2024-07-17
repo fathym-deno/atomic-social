@@ -1,12 +1,4 @@
-import {
-  afterEach,
-  assert,
-  assertEquals,
-  beforeEach,
-  describe,
-  it,
-  render,
-} from "../test.deps.ts";
+import { assert, describe, it, render } from "../test.deps.ts";
 import { FeedCard, FeedCardProps } from "../../src/organisms/FeedCard.tsx";
 
 describe("FeedCard Tests", () => {

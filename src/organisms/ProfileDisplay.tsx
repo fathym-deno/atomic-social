@@ -6,7 +6,6 @@ import {
   ComponentChildren,
   JSX,
   MenuButton,
-  MenuButtonProps,
   MenuButtonStyleTypes,
 } from "../src.deps.ts";
 

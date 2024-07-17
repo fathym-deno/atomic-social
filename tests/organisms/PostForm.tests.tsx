@@ -1,11 +1,4 @@
-import {
-  afterEach,
-  assert,
-  beforeEach,
-  describe,
-  it,
-  render,
-} from "../test.deps.ts";
+import { assert, describe, it, render } from "../test.deps.ts";
 import { PostForm, PostFormProps } from "../../src/organisms/PostForm.tsx";
 
 describe("PostForm Tests", () => {
